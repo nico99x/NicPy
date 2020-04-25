@@ -1,0 +1,3 @@
+# NicPy
+
+Hi everyone!
