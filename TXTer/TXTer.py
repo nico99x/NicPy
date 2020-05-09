@@ -29,12 +29,12 @@ def generator_button():
         email_entry.insert(0 , "Invalid e-mail format! ")
 
 
-    if str(n_i or s_i or d_i or e_i) == "":
-        while True: 
+    if str(n_i and s_i) == "":
+        while True:
+            name_entry.delete(0,30) 
             name_entry.insert(0 , "Required")
+            surname_entry.delete(0,30)
             surname_entry.insert(0 , "Required")
-            date_entry.insert(0 , "Required")
-            email_entry.insert(0 , "Required")
             break
             continue
             
