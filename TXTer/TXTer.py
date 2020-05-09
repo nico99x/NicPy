@@ -1,7 +1,7 @@
 import time
 import os 
 import tkinter as tk 
-
+import re
 
 #----WINDOWS SETTINGS---->
 win = tk.Tk()
@@ -22,6 +22,13 @@ def generator_button():
     e_i = email_entry.get()
     #check if the entry widgets are correctly filled
     #all fields are required
+
+    #regex for the control of the correct format of the e-mail
+    if not re.match(r"[^@]+@[^@+]\.^@+" , e_i):
+        email_entry.delete(0 , 30)
+        email_entry.insert(0 , "Invalid e-mail format! ")
+
+
     if str(n_i or s_i or d_i or e_i) == "":
         while True: 
             name_entry.insert(0 , "Required")
